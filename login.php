@@ -14,10 +14,10 @@ require_once '../nana_website/include/database.php'
 <form method="post" action="verifylogin.php">
     <fieldset>
         <legend>Login</legend>
-        Username:<br>
-        <input type="email" name="username" placeholder="name@email.com" required><br>
-        Password:<br>
-        <input type="password" name="password" placeholder="password"><br><br>
+        Username<br>
+        <input type="email" name="username" id="username" placeholder="name@email.com" required><br>
+        Password<br>
+        <input type="password" name="password" id="password" placeholder="password"><br><br>
         <input type="submit" value="login">
     </fieldset>
 </form>

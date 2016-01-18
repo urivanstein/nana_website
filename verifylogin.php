@@ -22,7 +22,7 @@ if($scan == 1)
     //register and go to reservation page
     $_SESSION['username']= $username;
     $_SESSION['password']= $password;
-    header(location: reservation.php);
+    header('Location: reservation.php');
 }
 //if incorrect
 else
