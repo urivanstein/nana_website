@@ -182,8 +182,8 @@ aside
 {
    /* background-color: yellow;*/
     float: left;
-    width: 40vw;
-    height: 100vh;
+    width: 40%;
+    height: 100%;
     text-align: center;
 }
 
@@ -195,21 +195,21 @@ aside
     border-style: solid;
     border-width: 8px;
     border-color: #54C2B4;
-    margin-top: 30vh;
+    margin-top: 30%;
 }
 
 article
 {
     /*background-color: red;*/
-    width: 60vw;
-    height: 100vh;
+    width: 60%;
+    height: 100%;
     float: left;
 }
 
 #container
  {
     text-align: center;
-    margin-top: 40vh;
+    margin-top: 40%;
     padding-left: 40px;
     padding-right: 40px;
  }

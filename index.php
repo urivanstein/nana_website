@@ -6,7 +6,7 @@
 <html>
 <head>
     <title>Natasja personal trainer</title>
-    <meta charset="utf-8"></meta>
+    <meta charset="utf-8">
     <link rel="stylesheet" href="normalize.css">
     <link rel="stylesheet" href="style.css"/>
 </head>
@@ -46,12 +46,12 @@
 
 <!--pricing-->
 <div id="pictures" class="wrapper">
-    
+    <img id="siteimg" src="images/sweaty_belly.jpg"
 </div>
 
 <!--contact-->
 <div id="contact" class="wrapper">
-    <img id="siteimg" src="images/sweaty_belly.jpg"
+
 </div>
 
 <script src="main.js"></script>
