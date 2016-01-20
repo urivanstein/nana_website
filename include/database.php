@@ -2,6 +2,6 @@
 $host = "localhost";
 $database = "reservation_system";
 $user = "root";
-$dbpassword = "";
+$password = "";
 
-$db = mysqli_connect($host, $user, $dbpassword, $database) or die("Error: " . mysqli_connect_error());;
+$db = mysqli_connect($host, $user, $password, $database) or die("Error: " . mysqli_connect_error());;

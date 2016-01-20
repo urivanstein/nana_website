@@ -18,6 +18,7 @@
         <li><a href="index.php#about">About Us</a></li>
         <li><a href="index.php#pictures">Pictures</a></li>
         <li><a href="index.php#contact">Contact</a></li>
+        <li><a href="login.php">Login</a></li>
     </ul>
 </div>
 
