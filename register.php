@@ -16,11 +16,16 @@ if (isset($_POST['submit']))
     $name = mysqli_escape_string($db, $_POST['name']);
     $surname = mysqli_escape_string($db, $_POST['surname']);
     $email = mysqli_escape_string($db, $_POST['email']);
-    $password = mysqli_escape_string($db, $_POST['password']);
+    $password = $_POST['password'];
+    /*$hashed_password = password_hash($password, PASSWORD_DEFAULT);*/
 
     //add to db
-    mysqli_query("INSERT INTO users(id, name, surname, email, password)
-                  VALUES ('', '$name', '$surname', '$email', '$password')");
+    $query = "INSERT INTO users(id, name, surname, email, password)
+              VALUES ('', '$name', '$surname', '$email', '$password')";
+    mysqli_query($db, $query);
+
+    //go to login page afterwards
+    header('Location: login.php');
 }
 
 ?>

@@ -1,4 +1,5 @@
 <?php
+require_once '../nana_website/include/database.php';
 session_start();
 
 //If our session doesn't exist, redirect & exit script
@@ -9,6 +10,41 @@ if (!isset($_SESSION['name'])) {
 
 //Get variable from session to use
 $name = $_SESSION['name'];
+
+
+//get values from form
+if (isset($_POST['submit']))
+{
+    //prevent code injection
+    $date = mysqli_escape_string($db, $_POST['date']);
+    $time = mysqli_escape_string($db, $_POST['time']);
+
+    //add to db
+    $query = "INSERT INTO reservations(email, date, time)
+                  VALUES ('$name', '$date', '$time')";
+    mysqli_query($db, $query);
+}
+
+//show reservations already made
+if (isset($_SESSION['name']) || ($_POST['submit']))
+{
+     //query for retrieving all reservations made by user
+    $query = "SELECT * FROM reservations WHERE email= '$name'";
+
+
+    //results from query
+    $result = mysqli_query($db, $query);
+
+    //array for results
+    $reservations = [];
+
+    while ($row = mysqli_fetch_assoc($result))
+    {
+        $reservations [] = $row;
+    }
+}
+
+//delete reservation
 
 ?>
 <!doctype html>
@@ -36,10 +72,23 @@ $name = $_SESSION['name'];
     <fieldset>
         <label for="date">Date</label><br>
         <input type="date" name="date" id="date" required/><br><br>
-        <label for="time">Date</label><br>
+        <label for="time">Time</label><br>
         <input type="time" name="time" id="time" required/><br><br>
         <input type="submit" name="submit" value="Make Reservation"/>
     </fieldset>
 </form>
+
+<ul>
+    <?php
+
+    foreach ($reservations as $reservation)
+    {
+               ?>
+        <li><?= $reservation['date'] ?> - <?= $reservation['time'] ?></li><input type="submit" name="delete" value="delete"><br>
+        <?php
+    }
+
+    ?>
+</ul>
 </body>
 </html>    

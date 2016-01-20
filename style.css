@@ -239,3 +239,10 @@ p
 {
     background-color: #2F3130;
 }
+
+form
+{
+    position: relative;
+    padding-top: 40px;
+
+}
